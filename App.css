@@ -1,0 +1,31 @@
+#home,
+#cart {
+  height: 50px;
+  width: 50px;
+}
+#title {
+  text-align: center;
+  font-size: 19px;
+  padding-left: 20px;
+  margin-left: 25%;
+}
+#head {
+  display: flex;
+  justify-content: space-between;
+}
+#product {
+  text-align: center;
+}
+#cart {
+  margin-left: 45%;
+}
+#prod {
+  width: 100px;
+}
+#product {
+  border: 1px solid black;
+}
+img {
+  height: 50px;
+  width: 50px;
+}
