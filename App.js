@@ -7,6 +7,7 @@ import Pencil from "./img/Pencil.png";
 import Eraser from "./img/Eraser.jpg";
 import Marker from "./img/Marker.jpg";
 import Glue from "./img/Glue.png";
+import Header from "./components/Header";
 
 function App() {
   const [myCart, setMyCart] = useState([]);
@@ -20,7 +21,6 @@ function App() {
     { name: "Marker", price: 6, pic: Marker },
     { name: "Glue", price: 2, pic: Glue },
   ];
-  ///add Flag for change cart/home!
   const addCart = (i) => {
     setMyCart([...myCart, product[i]]);
   };
@@ -28,7 +28,7 @@ function App() {
     setMyCart([]);
   };
 
-  const cart = () => {
+  const showCart = () => {
     setProductDisplay("none");
     setCartDisplay("block");
   };
@@ -38,29 +38,11 @@ function App() {
   };
   return (
     <div className="App">
-      <div id="head">
-        <button
-          id="home"
-          onClick={() => {
-            showHome();
-          }}
-        >
-          🏡
-        </button>
-        <h1 id="title">SV-SHOP</h1>
-        <button
-          id="cart"
-          onClick={() => {
-            cart();
-          }}
-        >
-          🛒
-        </button>
-      </div>
-      <div id="productList" style={{ display: productDisplay }}>
+      <Header showHome={showHome} showCart={showCart}/>
+      <div style={{ display: productDisplay }}>
         <ProductsPage arr={product} add={addCart} />
       </div>
-      <div id="cartList" style={{ display: cartDisplay }}>
+      <div style={{ display: cartDisplay }}>
         <Cart productList={myCart} buy={buyFunc} />
       </div>
     </div>
